@@ -1,0 +1,22 @@
+{
+  "name": "mobly/redis-psr7",
+  "description": "Redis PSR-7 Adapter",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Mobly\\Cache\\Adapter\\Redis\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.4",
+    "mobly/adapter-psr7": "~1.0"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Mobly Developers",
+      "email": "dev@mobly.com.br"
+    }
+  ],
+  "minimum-stability": "dev"
+}
