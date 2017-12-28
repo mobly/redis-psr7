@@ -104,14 +104,15 @@ class RedisAdapter extends AbstractCacheAdapter implements RedisAdapterInterface
             return $response;
         }
 
-        foreach ($result as $key => $value) {
-            $cacheItem = new CacheItem($keys[$key]);
+        foreach ($result as $index => $value) {
+            $key = $keys[$index];
+            $cacheItem = new CacheItem($key);
 
             if ($value !== '') {
                 $cacheItem->set(unserialize($value));
             }
 
-            $response[] = $cacheItem;
+            $response[$key] = $cacheItem;
         }
 
         return $response;
