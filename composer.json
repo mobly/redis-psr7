@@ -9,7 +9,8 @@
   },
   "require": {
     "php": ">=5.4",
-    "mobly/adapter-psr7": "~1.0"
+    "mobly/adapter-psr7": "~1.0",
+    "ext-redis": "*",
   },
   "license": "proprietary",
   "authors": [
