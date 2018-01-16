@@ -10,7 +10,7 @@
   "require": {
     "php": ">=5.4",
     "mobly/adapter-psr7": "~1.0",
-    "ext-redis": "*",
+    "ext-redis": "*"
   },
   "license": "proprietary",
   "authors": [
