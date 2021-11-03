@@ -41,10 +41,19 @@ class RedisAdapter extends AbstractCacheAdapter implements RedisAdapterInterface
         $this->configuration = $configuration;
 
         $this->cache = new \Redis();
-        $this->cache->connect(
-            $configuration->getHost(),
-            $configuration->getPort()
-        );
+
+        if ($configuration->getPersistent()) {
+            $this->cache->pconnect(
+                $configuration->getHost(),
+                $configuration->getPort()
+            );
+        } else {
+            $this->cache->connect(
+                $configuration->getHost(),
+                $configuration->getPort()
+            );
+        }
+
         $this->cache->select($configuration->getSelect());
 
         if (
